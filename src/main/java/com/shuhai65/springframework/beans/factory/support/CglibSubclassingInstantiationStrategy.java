@@ -10,6 +10,7 @@ public class CglibSubclassingInstantiationStrategy implements InstantiationStrat
 
     @Override
     public Object instantiate(BeanDefinition beanDefinition, String beanName, Constructor ctor, Object[] args) throws BeansException {
+        System.out.println("CglibSubclassingInstantiationStrategy instantiate");
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(beanDefinition.getBeanClass());
         enhancer.setCallback(new NoOp() {

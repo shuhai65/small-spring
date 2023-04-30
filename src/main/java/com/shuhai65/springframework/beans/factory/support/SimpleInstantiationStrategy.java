@@ -10,6 +10,7 @@ public class SimpleInstantiationStrategy implements InstantiationStrategy {
 
     @Override
     public Object instantiate(BeanDefinition beanDefinition, String beanName, Constructor ctor, Object[] args) throws BeansException {
+        System.out.println("SimpleInstantiationStrategy instantiate");
         Class clazz = beanDefinition.getBeanClass();
         try {
             if (null != ctor) {
